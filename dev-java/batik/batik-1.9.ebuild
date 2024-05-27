@@ -1,11 +1,11 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
+EAPI=7
 
 JAVA_PKG_IUSE="doc"
 
-inherit java-pkg-2 java-ant-2 epatch
+inherit java-pkg-2 java-ant-2 
 
 DESCRIPTION="Java based SVG toolkit"
 HOMEPAGE="https://xmlgraphics.apache.org/batik/"
@@ -27,11 +27,11 @@ CDEPEND="
 
 DEPEND="
 	${CDEPEND}
-	>=virtual/jdk-1.6"
+	=virtual/jdk-1.8.0"
 
 RDEPEND="
 	${CDEPEND}
-	>=virtual/jre-1.6"
+	=virtual/jre-1.8.0"
 
 JAVA_ANT_REWRITE_CLASSPATH="true"
 
@@ -51,7 +51,7 @@ src_prepare() {
 	done
 
 	# See bug 628812.
-	use tcl && epatch "${FILESDIR}/${P}-ImportInfo.patch"
+	use tcl && eapply "${FILESDIR}/${P}-ImportInfo.patch"
 
 	cd lib || die
 	rm -v *.jar build/*.jar || die

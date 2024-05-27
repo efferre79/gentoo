@@ -14,7 +14,7 @@ inherit desktop java-pkg-2 java-pkg-simple xdg-utils
 
 DESCRIPTION="XML Graphics Batik"
 HOMEPAGE="https://xmlgraphics.apache.org/batik/"
-SRC_URI="mirror://apache/xmlgraphics/batik/source/batik-src-${PV}.tar.gz"
+SRC_URI="https://archive.apache.org/dist/xmlgraphics/batik/source/batik-src-${PV}.zip"
 
 LICENSE="Apache-2.0"
 SLOT="1.14"
